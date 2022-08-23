@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32421.90
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASS3_PRN_Bl5", "ASS3_PRN_Bl5\ASS3_PRN_Bl5.csproj", "{1F73A6E8-3368-4BF6-B594-CFFF8EC65A6B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASS3_PRN_Bl5", "ASS3_PRN_Bl5\ASS3_PRN_Bl5.csproj", "{1F73A6E8-3368-4BF6-B594-CFFF8EC65A6B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UseADO", "UseADO\UseADO.csproj", "{49400B68-9A1F-4FC6-AAD5-C5D4048D089C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{1F73A6E8-3368-4BF6-B594-CFFF8EC65A6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F73A6E8-3368-4BF6-B594-CFFF8EC65A6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1F73A6E8-3368-4BF6-B594-CFFF8EC65A6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49400B68-9A1F-4FC6-AAD5-C5D4048D089C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49400B68-9A1F-4FC6-AAD5-C5D4048D089C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49400B68-9A1F-4FC6-AAD5-C5D4048D089C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49400B68-9A1F-4FC6-AAD5-C5D4048D089C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
