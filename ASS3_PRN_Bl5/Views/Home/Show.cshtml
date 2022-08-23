@@ -1,0 +1,106 @@
+﻿@using ASS3_PRN_Bl5.Models
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    List<TblMatHang> data = ViewBag.data;
+    TblMatHang thisPro = ViewBag.thisPro;
+}
+
+@model List<TblMatHang>
+
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<div style="display:flex;justify-content:center">
+    <form method="post" action="/Home/Show">
+        <label>Product Code :</label>
+        <select name="code" style="padding-right:100px" onchange="this.form.submit()">
+            <option value="0">All</option>
+            @foreach (var c in Model)
+            {
+                if (c.MaHang == @ViewBag.code)
+                {
+                    <option value="@c.MaHang" selected>@c.MaHang</option>
+                }
+                else
+                {
+                    <option value="@c.MaHang">@c.MaHang</option>
+                }
+            }
+        </select>
+        <br />
+
+        <label>Product Name : </label>
+        <input name="name" value="@thisPro.Tenhang" />
+        <button id="na" type="submit" name="filterName" onclick="searchName()">Filter by Name</button>
+        <br />
+
+        <label style="padding-top:20px;padding-right:84px">Unit</label>
+        <input name="unit" value="@thisPro.Dvt" />
+        <br />
+
+        <label style="padding-top:20px;padding-right:82px"> Price</label>
+        Old : <input name="from" value="@thisPro.Gia"/> ---->  New : <input name="to" />
+        <button id="pr" type="submit" name="filterPrice" onclick="searchPrice()">Filter by Price</button>
+        <br />
+
+        <label style="padding-top:20px;padding-right:80px"> Image</label>
+        <input name="img" value="@thisPro.Image"/>
+        <button id="im" type="submit" name="filterImg" onclick="searchImg()">Filter by Image</button>
+        <br />
+
+        <div style="padding-top:50px">
+            <button id="up" type="submit" name="update" onclick="updatePro()">Update</button>
+            &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="/Home/Show">Reset</a>
+        </div>
+    </form>
+</div>
+
+<div style="display:flex;justify-content:center">
+    <table class="table" style="width:50%">
+        "
+        <thead>
+            <tr>
+                <th scope="col">Mã hàng</th>
+                <th scope="col">Tên hàng</th>
+                <th scope="col">DVT</th>
+                <th scope="col">Giá</th>
+                <th scope="col">Image</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var p in data)
+            {
+                <tr>
+                    <td>@p.MaHang</td>
+                    <td>@p.Tenhang</td>
+                    <td>@p.Dvt</td>
+                    <td>@p.Gia</td>
+                    <td>@p.Image</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<script>
+    function updatePro(){
+        document.getElementById("up").value = "update";
+    }
+
+    function searchName(){
+        document.getElementById("na").value = "na";
+    }
+
+     function searchPrice(){
+        document.getElementById("pr").value = "pr";
+    }
+
+    function searchImg(){
+        document.getElementById("im").value = "im";
+    }
+</script>
